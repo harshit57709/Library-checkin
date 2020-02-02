@@ -1,0 +1,135 @@
+<%- include ("partials/header") %>
+<% var	occupiedseats1 = []
+	students.forEach(function(object){
+	occupiedseats1.push(object.seatNo)
+})%>
+
+
+    <body>
+        <div class="text-center">
+			<div class="jumbotron jumbotron-fluid">
+  				<div class="container ">
+    				<h1 class = 'change'>Welcome to the Central Library</h1>
+            		<p> Education is the greatest weapon you can use to change the World!!!!!
+					</p>
+  				</div>
+			</div>
+           
+        </div>
+        <div class="container mt-5  text-center alignmentats">
+            <h3 class="d-inline"> Total Seats: <span id ="total_seats">#   </span></h3>
+            		<h3 class="d-inline">Free Seats:  <span id ="free_seats">#  </span></h3>
+                <div class="row alignment ">
+                    <a href = '/form?seat=A1' class="btn btn-lg btn-default col-2 border border-dark is-empty">A1</a>
+                    <a href = '/form?seat=A2' class="btn btn-lg btn-default col-2 border border-dark is-empty">A2</a>
+                    <a href = '/form?seat=A3' class="btn btn-lg btn-default col-2 border border-dark is-empty">A3</a>
+                    <a href = '/form?seat=A4' class="btn btn-lg btn-default col-2 border border-dark is-empty">A4</a>
+                    <a href = '/form?seat=A5' class="btn btn-lg btn-default col-2 border border-dark is-empty">A5</a>
+                    <a href = '/form?seat=A6' class="btn btn-lg btn-default col-2 border border-dark is-empty">A6</a>
+                </div>
+                <div class="row alignment">
+                    <a href = '/form?seat=B1' class="btn btn-lg btn-default col-2 border border-dark is-empty">B1</a>
+                    <a href = '/form?seat=B2' class="btn btn-lg btn-default col-2 border border-dark is-empty">B2</a>
+                    <a href = '/form?seat=B3' class="btn btn-lg btn-default col-2 border border-dark is-empty">B3</a>
+                    <a href = '/form?seat=B4' class="btn btn-lg btn-default col-2 border border-dark is-empty">B4</a>
+                    <a href = '/form?seat=B5' class="btn btn-lg btn-default col-2 border border-dark is-empty">B5</a>
+                    <a href = '/form?seat=B6' class="btn btn-lg btn-default col-2 border border-dark is-empty">B6</a>
+                </div>
+                <div class="row alignment">
+                    <a href = '/form?seat=C1' class="btn btn-lg btn-default col-2 border border-dark is-empty">C1</a>
+                    <a href = '/form?seat=C2' class="btn btn-lg btn-default col-2 border border-dark is-empty">C2</a>
+                    <a href = '/form?seat=C3' class="btn btn-lg btn-default col-2 border border-dark is-empty">C3</a>
+                    <a href = '/form?seat=C4' class="btn btn-lg btn-default col-2 border border-dark is-empty">C4</a>
+                    <a href = '/form?seat=C5' class="btn btn-lg btn-default col-2 border border-dark is-empty">C5</a>
+                    <a href = '/form?seat=C6' class="btn btn-lg btn-default col-2 border border-dark is-empty">C6</a>
+                </div>
+                <div class="row alignment">
+                    <a href = '/form?seat=D1' class="btn btn-lg btn-default col-2 border border-dark is-empty">D1</a>
+                    <a href = '/form?seat=D2' class="btn btn-lg btn-default col-2 border border-dark is-empty">D2</a>
+                    <a href = '/form?seat=D3' class="btn btn-lg btn-default col-2 border border-dark is-empty">D3</a>
+                    <a href = '/form?seat=D4' class="btn btn-lg btn-default col-2 border border-dark is-empty">D4</a>
+                    <a href = '/form?seat=D5' class="btn btn-lg btn-default col-2 border border-dark is-empty">D5</a>
+                    <a href = '/form?seat=D6' class="btn btn-lg btn-default col-2 border border-dark is-empty">D6</a>
+                </div>
+                <div class="row alignment">
+                    <a href = '/form?seat=E1' class="btn btn-lg btn-default col-2 border border-dark is-empty">E1</a>
+                    <a href = '/form?seat=E2' class="btn btn-lg btn-default col-2 border border-dark is-empty">E2</a>
+                    <a href = '/form?seat=E3' class="btn btn-lg btn-default col-2 border border-dark is-empty">E3</a>
+                    <a href = '/form?seat=E4' class="btn btn-lg btn-default col-2 border border-dark is-empty">E4</a>
+                    <a href = '/form?seat=E5' class="btn btn-lg btn-default col-2 border border-dark is-empty">E5</a>
+                    <a href = '/form?seat=E6' class="btn btn-lg btn-default col-2 border border-dark is-empty">E6</a>
+                </div>
+                <div class="row alignment">
+                    <a href = '/form?seat=F1' name ="F1" class="btn btn-lg btn-default col-2 border border-dark is-empty">F1</a>
+                    <a href = '/form?seat=F2' class="btn btn-lg btn-default col-2 border border-dark is-empty">F2</a>
+                    <a href = '/form?seat=F3' class="btn btn-lg btn-default col-2 border border-dark is-empty">F3</a>
+                    <a href = '/form?seat=F4' class="btn btn-lg btn-default col-2 border border-dark is-empty">F4</a>
+                    <a href = '/form?seat=F5' class="btn btn-lg btn-default col-2 border border-dark is-empty">F5</a>
+                    <a href = '/form?seat=F6' class="btn btn-lg btn-default col-2 border border-dark is-empty">F6</a>
+                </div>
+                
+
+
+            
+            
+
+        </div>
+		
+		
+<script>
+
+var totalSeats = $("#total_seats");
+var freeSeats = $("#free_seats");
+var numberOfTotalSeats = 36;
+var numberOfFreeSeats = 36;
+
+totalSeats.html(numberOfTotalSeats)
+freeSeats.html(numberOfFreeSeats/2)
+
+//adding click event to all seats
+var seats = $('a');
+// seats.click(function(){
+// 	console.log($(this).html())
+//     $(this).toggleClass('is-occupied');
+//     $(this).toggleClass('is-free');
+//     if($(this).hasClass('is-occupied')){
+//        numberOfFreeSeats -=1;
+//     }
+
+//     else{
+//         numberOfFreeSeats +=1;
+//     }
+//     freeSeats.html(numberOfFreeSeats);
+
+
+    
+    
+    
+// })
+
+var occupiedseats = <%- JSON.stringify(occupiedseats1) %>
+	
+
+for(var i=0;i<seats.length;i++){
+		if(occupiedseats.includes(seats.eq(i).html())){
+			console.log('hi')
+			seats.eq(i).toggleClass('is-empty')
+			seats.eq(i).toggleClass('is-occupied')};
+	
+		if(seats.eq(i).hasClass('is-occupied')){
+    	   numberOfFreeSeats -=1;
+		   seats.eq(i).addClass('btn disabled')
+    	} else{
+        numberOfFreeSeats +=1;
+    	}
+    freeSeats.html(numberOfFreeSeats/2);
+		}
+	
+	
+// updating seat info
+
+</script>
+	
+
+    
+<%- include ("partials/footer") %>
